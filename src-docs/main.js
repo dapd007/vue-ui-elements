@@ -4,9 +4,13 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 
-//  import Vui from '../src';
+import Vui from '../src';
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+
+Vue.use(Vui);
+
+import '../src/scss/vui.scss';
 
 /* eslint-disable no-new */
 new Vue({
@@ -14,4 +18,4 @@ new Vue({
   router,
   template: '<App/>',
   components: { App }
-})
+});

@@ -1,0 +1,68 @@
+//  Colors
+$vui-black:	            hsl(0, 0%, 4%) !default;
+$vui-black-bis:	        hsl(0, 0%, 7%) !default;
+$vui-black-ter:	        hsl(0, 0%, 14%) !default;
+$vui-grey-darker:       hsl(0, 0%, 21%) !default;
+$vui-grey-dark:	        hsl(0, 0%, 29%) !default;
+$vui-grey:	            hsl(0, 0%, 48%) !default;
+$vui-grey-light:	    hsl(0, 0%, 71%) !default;
+$vui-grey-lighter:	    hsl(0, 0%, 86%) !default;
+$vui-white-ter:	        hsl(0, 0%, 96%) !default;
+$vui-white-bis:	        hsl(0, 0%, 98%) !default;
+$vui-white:	            hsl(0, 0%, 100%) !default;
+$vui-orange:	        hsl(14, 100%, 53%) !default;
+$vui-yellow:	        hsl(48, 100%, 67%) !default;
+$vui-green:	            hsl(141, 71%, 48%) !default;
+$vui-turquoise:	        hsl(171, 100%, 41%) !default;
+$vui-blue:	            hsl(217, 71%, 53%) !default;
+$vui-purple:	        hsl(271, 100%, 71%) !default;
+$vui-red:	            hsl(348, 100%, 61%) !default;
+
+//  Primary Colors
+$vui-primary:           $vui-turquoise !default;
+$vui-info:              $vui-blue !default;
+$vui-success:           $vui-green !default;
+$vui-warning:	        $vui-yellow !default;
+$vui-danger:    	    $vui-red !default;
+$vui-light:             $vui-white-ter !default;
+$vui-dark:      	    $vui-grey-darker !default;
+
+//  Invert Colors
+$vui-orange-invert:     findColorInvert($vui-orange) !default
+$vui-yellow-invert:     findColorInvert($vui-yellow) !default
+$vui-green-invert:      findColorInvert($vui-green) !default
+$vui-turquoise-invert:  findColorInvert($vui-turquoise) !default
+$vui-blue-invert:       findColorInvert($vui-blue) !default
+$vui-purple-invert:     findColorInvert($vui-purple) !default
+$vui-red-invert:        findColorInvert($vui-red) !default
+
+$vui-primary-invert:    $vui-turquoise-invert !default
+$vui-info-invert:       $vui-blue-invert !default
+$vui-success-invert:    $vui-green-invert !default
+$vui-warning-invert:    $vui-yellow-invert !default
+$vui-danger-invert:     $vui-red-invert !default
+$vui-light-invert:      $vui-dark !default
+$vui-dark-invert:       $vui-light !default
+
+//  General Colors
+$vui-background:	    $vui-grey-lighter !default;
+$vui-border:            $vui-grey-light !default;
+$vui-border-hover:      $vui-grey !default;
+
+//  Text Colors
+$vui-text:      	    $vui-grey-dark !default;
+$vui-text-invert:	    findColorInvert($vui-text) !default;
+$vui-text-light:	    $vui-grey !default;
+$vui-text-strong:	    $vui-grey-darker !default;
+
+$colors: (
+        "white": ($vui-white, $vui-black), 
+        "black": ($vui-black, $vui-white), 
+        "light": ($vui-light, $vui-light-invert), 
+        "dark": ($vui-dark, $vui-dark-invert), 
+        "primary": ($vui-primary, $vui-primary-invert), 
+        "info": ($vui-info, $vui-info-invert), 
+        "success": ($vui-success, $vui-success-invert), 
+        "warning": ($vui-warning, $vui-warning-invert), 
+        "danger": ($vui-danger, $vui-danger-invert)
+);

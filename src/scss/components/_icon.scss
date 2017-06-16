@@ -1,0 +1,43 @@
+.vui-icon {
+  @include unselectable;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5rem;
+  width: 1.5rem;
+
+  .fa, .material-icons {
+    font-size: 24px;
+  }
+  // Sizes
+  &.is-small {
+    height: 1rem;
+    width: 1rem;
+    .fa, .material-icons {
+      font-size: 16px;
+    }
+  }
+  &.is-medium {
+    height: 2rem;
+    width: 2rem;
+    .fa, .material-icons {
+      font-size: 32px;
+    }
+  }
+  &.is-large {
+    height: 3rem;
+    width: 3rem;
+    .fa, .material-icons {
+      font-size: 48px;
+    }
+  }
+
+  //  Colors
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+    &.is-#{$name} {
+      color: $color;
+    }
+  }
+}
