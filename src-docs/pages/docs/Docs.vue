@@ -42,15 +42,19 @@
 <script>
     import AppHeader from '../../templates/Header.vue'
     import AppFooter from '../../templates/Footer.vue'
+
+    //  Components
     import Start from './Start/Start.vue'
+    import General from './General/General.vue'
+    import Forms from './Forms/Forms.vue'
 
     export default {
         components: {
             AppHeader,
             AppFooter,
             Start,
-//            General,
-//            Notices,
+            General,
+            Forms,
 //            FormElements,
 //            DataManipulation
         },
@@ -59,8 +63,8 @@
                 currentTab: 'Start',
                 tabs: [
                     { title: 'Start', component: 'Start' },
-//                    { title: 'General', component: 'General' },
-//                    { title: 'Notices', component: 'Notices' },
+                    { title: 'General', component: 'General' },
+                    { title: 'Forms', component: 'Forms' },
 //                    { title: 'Form', component: 'FormElements' },
 //                    { title: 'Data', component: 'DataManipulation' }
                 ]

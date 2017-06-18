@@ -8,7 +8,11 @@ const Home = require('../pages/Home.vue');
 const Docs = require('../pages/docs/Docs.vue');
 const Install = require('../pages/docs/Start/Install.vue');
 
-const Playground = require('../pages/docs/Start/Playground.vue');
+//  General
+const Icon = require('../pages/docs/General/Icon.vue');
+
+//  Forms
+const Radio = require('../pages/docs/Forms/Radio.vue');
 
 export default new Router({
     linkActiveClass: 'is-active',
@@ -22,6 +26,7 @@ export default new Router({
             path: '/docs',
             component: Docs,
             children: [
+                //  Start
                 {
                     path: 'install',
                     component: Install,
@@ -30,15 +35,24 @@ export default new Router({
                     }
                 },
                 {
-                    path: 'playground',
-                    component: Playground,
-                    meta: {
-                        category: 'Start'
-                    }
-                },
-                {
                     path: '',
                     redirect: 'install'
+                },
+                //  General
+                {
+                    path: 'icon',
+                    component: Icon,
+                    meta: {
+                        category: 'General'
+                    }
+                },
+                //  Forms
+                {
+                    path: 'radio',
+                    component: Radio,
+                    meta: {
+                        category: 'Forms'
+                    }
                 }
             ]
         }
