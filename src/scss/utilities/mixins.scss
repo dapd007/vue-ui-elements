@@ -1,3 +1,7 @@
+@mixin basic-transition {
+  transition:all 0.3s ease;
+}
+
 @mixin unselectable {
   user-select: none;
 }

@@ -1,0 +1,109 @@
+.vui-radio {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
+  .vui-radio__input {
+    line-height: 1;
+  }
+
+  .vui-radio__inner {
+    @include basic-transition;
+    border: 1px solid $vui-border;
+    width: 18px;
+    height: 18px;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 50%;
+
+    &::after{
+      @include basic-transition;
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      background-color: $vui-white;
+      height: 6px;
+      width: 6px;
+      border-radius: 50%;
+    }
+  }
+
+  input[type=radio] {
+    display: none !important;
+  }
+
+  .vui-radio__label {
+    font-size: 14px;
+    padding-left: 5px;
+  }
+
+  &:hover {
+    .vui-radio__inner {
+      border-color: $vui-border-hover;
+    }
+  }
+}
+
+//  Colors (types)
+.vui-radio__input {
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+    &.is-#{$name} {
+      .vui-radio__inner {
+        border-color: $color;
+      }
+    }
+  }
+}
+
+//  States
+.vui-radio__input.is-checked {
+  .vui-radio__inner {
+    border-color: $vui-text;
+    background-color: $vui-text;
+
+    &::after {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+    &.is-#{$name} {
+      .vui-radio__inner {
+        border-color: $color;
+        background-color: $color;
+      }
+    }
+  }
+}
+
+.vui-radio__input.is-disabled {
+  cursor: not-allowed;
+  .vui-radio__inner {
+    border-color: $vui-disabled-control-bg;
+    background-color: $vui-disabled-control-bg;
+  }
+
+  & + .vui-radio__label {
+    cursor: not-allowed;
+  }
+
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+    &.is-#{$name} {
+      .vui-radio__inner {
+        border-color: $color;
+        background-color: $color;
+        opacity: .5;
+      }
+    }
+  }
+}

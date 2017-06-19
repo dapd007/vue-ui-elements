@@ -55,6 +55,9 @@ $vui-text-invert:	    findColorInvert($vui-text) !default;
 $vui-text-light:	    $vui-grey !default;
 $vui-text-strong:	    $vui-grey-darker !default;
 
+//  Controls
+$vui-disabled-control-bg:  $vui-grey-lighter !default;
+
 $colors: (
         "white": ($vui-white, $vui-black), 
         "black": ($vui-black, $vui-white), 
