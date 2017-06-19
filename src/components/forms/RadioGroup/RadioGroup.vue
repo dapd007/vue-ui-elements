@@ -20,6 +20,15 @@
             name: {
                 required: true,
                 type: String
+            },
+            useButtons: {
+                default: false,
+                type: Boolean
+            },
+            type: String,
+            disabled: {
+                default: false,
+                type: Boolean
             }
         },
         data() {

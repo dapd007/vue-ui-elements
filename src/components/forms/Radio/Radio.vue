@@ -1,8 +1,8 @@
 <template>
-    <label class="vui-radio">
-        <span class="vui-radio__input" :class="[{ 'is-checked' : actualValue == actualModel, 'is-disabled': disabled }, type]">
-            <span class="vui-radio__inner"></span>
-            <input type="radio" :value="actualValue" :name="fieldName" @change="updateValue($event.target.value)" :disabled="disabled">
+    <label class="vui-radio" :class="[{ 'vui-radio-button' : isButton, 'is-checked' : actualValue == actualModel, 'is-disabled': isDisabled }, actualType]">
+        <span class="vui-radio__input">
+            <span class="vui-radio__inner" v-if="!isButton"></span>
+            <input type="radio" :value="actualValue" :name="fieldName" @change="updateValue($event.target.value)" :disabled="isDisabled">
         </span>
         <span class="vui-radio__label">
             <slot></slot>
@@ -31,7 +31,7 @@
                 type: String
             },
             name: String,
-            disabled: Boolean
+            disabled: Boolean,
         },
         data() {
             return {}
@@ -49,6 +49,9 @@
             actualModel() {
                 return this.isGrouped ? this._group.model : this.model;
             },
+            actualType() {
+                return this.isGrouped && this._group.type ? this._group.type : this.type;
+            },
             isGrouped() {
                 let parent = this.$parent;
                 while (parent) {
@@ -61,6 +64,12 @@
                 }
                 return false;
             },
+            isButton() {
+                return this.isGrouped && this._group.useButtons;
+            },
+            isDisabled() {
+                return this.isGrouped && this._group.disabled ? this._group.disabled : this.disabled;
+            }
         },
         methods: {
             updateValue(value){

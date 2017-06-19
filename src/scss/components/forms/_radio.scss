@@ -3,6 +3,7 @@
   display: inline-flex;
   align-items: center;
   cursor: pointer;
+  user-select: none;
 
   .vui-radio__input {
     line-height: 1;
@@ -49,7 +50,7 @@
 }
 
 //  Colors (types)
-.vui-radio__input {
+.vui-radio {
   @each $name, $pair in $colors {
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
@@ -62,7 +63,7 @@
 }
 
 //  States
-.vui-radio__input.is-checked {
+.vui-radio.is-checked {
   .vui-radio__inner {
     border-color: $vui-text;
     background-color: $vui-text;
@@ -84,7 +85,7 @@
   }
 }
 
-.vui-radio__input.is-disabled {
+.vui-radio.is-disabled {
   cursor: not-allowed;
   .vui-radio__inner {
     border-color: $vui-disabled-control-bg;
@@ -106,4 +107,69 @@
       }
     }
   }
+}
+
+.vui-radio-group {
+  display: flex;
+}
+
+.vui-radio.vui-radio-button {
+
+  background-color: transparent;
+  border: 1px solid $vui-border;
+  padding: 0.35em 0.75em;
+
+  .vui-radio__label {
+    padding: 0;
+  }
+
+  &:first-child {
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+  }
+
+  &:last-child {
+    border-top-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+  }
+
+  &:not(:first-child) {
+    border-left: none;
+  }
+
+  //  States
+  &:hover {
+    color: $vui-text-strong;
+  }
+
+  &.is-checked {
+    border-color: $vui-text;
+    background-color: $vui-text;
+    color: $vui-white;
+  }
+
+  &.is-disabled {
+    background-color: $vui-disabled-control-bg;
+    opacity: .5;
+
+    &.is-checked {
+      color: $vui-text;
+    }
+  }
+
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+    &.is-#{$name} {
+      color: $color;
+      border-color: $color;
+
+      &.is-checked {
+        border-color: $color;
+        background-color: $color;
+        color: $color-invert;
+      }
+    }
+  }
+
 }
