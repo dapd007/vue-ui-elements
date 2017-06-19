@@ -36,16 +36,16 @@
             </div>
         </div>
         <br><br>
-        <!--<div id="radio-group">-->
-            <!--Radio Group-->
-            <!--<vui-radio-group v-model="radioG">-->
-                <!--<vui-radio label="Option 1" value="option 1" name="test-radio"></vui-radio>-->
-                <!--<vui-radio style="margin-left: 15px;" label="Option 2" value="Option 2" name="test-radio"></vui-radio>-->
-                <!--<div>-->
-                    <!--Selected: {{radioG}}-->
-                <!--</div>-->
-            <!--</vui-radio-group>-->
-        <!--</div>-->
+        <div id="radio-group">
+            Radio Group
+            <vui-radio-group v-model="radioG" name="radio-group">
+                <vui-radio label="Option 1" value="option 1"></vui-radio>
+                <vui-radio style="margin-left: 15px;" label="Option 2" value="Option 2"></vui-radio>
+                <div>
+                    Selected: {{radioG}}
+                </div>
+            </vui-radio-group>
+        </div>
     </div>
 </template>
 <script>
