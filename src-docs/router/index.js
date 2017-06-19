@@ -48,7 +48,7 @@ export default new Router({
                 },
                 //  Forms
                 {
-                    path: 'radio',
+                    path: 'Radio',
                     component: Radio,
                     meta: {
                         category: 'Forms'

@@ -39,9 +39,9 @@
             },
 //            theIcon() {
 //                if ( this.iconPack === 'mdi' )
-//                    return this.icon;
+//                    return this.Icon;
 //                else
-//                    return 'fa-' . this.icon;
+//                    return 'fa-' . this.Icon;
 //            }
         }
     }

@@ -5,14 +5,16 @@
 import config, { setOptions } from './utils/config'
 
 //  General
-import Icon from './components/icon';
+import Icon from './components/Icon';
 
 //  Forms
-import Radio from './components/forms/radio';
+import Radio from './components/forms/Radio';
+import RadioGroup from './components/forms/RadioGroup';
 
 const components = {
     Icon,
-    Radio
+    Radio,
+    RadioGroup
 };
 
 components.install = (Vue, options = {}) => {

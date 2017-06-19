@@ -12,7 +12,7 @@
           <span class="icon">
             <i class="fa fa-github"></i>
           </span>
-          <!--TODO Replace with icon component-->
+          <!--TODO Replace wIconicon component-->
         </a>
       </div>
 
